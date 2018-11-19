@@ -24,4 +24,14 @@ public class GameManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
     }
+
+    public int GetGameMode()
+    {
+        return this.gamemode;
+    }
+
+    public void SetGameMode(int gameMode)
+    {
+        this.gamemode = gameMode;
+    }
 }

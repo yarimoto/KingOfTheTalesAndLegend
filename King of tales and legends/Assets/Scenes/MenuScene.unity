@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 179081753}
   - component: {fileID: 179081752}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ButtonLocal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 179081753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: e4b1d77b5936d0349b29a295fc4a6c31, type: 3}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &179081753
@@ -654,7 +665,7 @@ GameObject:
   - component: {fileID: 1138119224}
   - component: {fileID: 1138119223}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ButtonOnline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +728,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1138119224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: e4b1d77b5936d0349b29a295fc4a6c31, type: 3}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1138119224
@@ -766,7 +788,7 @@ GameObject:
   - component: {fileID: 1218944286}
   - component: {fileID: 1218944285}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonVsIa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -831,7 +853,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 229053943}
-        m_MethodName: btn_test
+        m_MethodName: ButtonVsIa
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
