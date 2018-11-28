@@ -10,7 +10,7 @@ public class MenuManager : MonoBehaviour {
         GameObject gameManagerGameObject = GameObject.Find("GameManager");
         GameManager gameManager = gameManagerGameObject.GetComponent<GameManager>();
         gameManager.SetGameMode(0);
-        SceneManager.LoadScene("CharactersSelectionScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
     }
 
     public void ButtonLocal ()
