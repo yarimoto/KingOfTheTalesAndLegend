@@ -17,6 +17,8 @@ public class Battle : MonoBehaviour {
     int player2_life;
     bool end;
     List<List<String>> damageTable;
+    bool defeat;
+    public Sprite[] bg;
 
     public Text timeText;
     public Text player1_hp;
@@ -36,6 +38,15 @@ public class Battle : MonoBehaviour {
         damageTable.Add(new List<string>() { "Draw", "Win", "Lose" });
         damageTable.Add(new List<string>() { "Lose", "Draw", "Win" });
         damageTable.Add(new List<string>() { "Win", "Lose", "Draw" });
+        defeat = false;
+        UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
+        GameObject UI_BackGround = GameObject.Find("bg");
+        UI_BackGround.GetComponent<Image>().sprite = bg[UnityEngine.Random.Range(0, 3)];
+        GameObject UI_player1_HPBar = GameObject.Find("P1_HPBar");
+        UI_player1_HPBar.GetComponent<Image>().fillAmount = 1;
+        GameObject UI_player2_HPBar = GameObject.Find("P2_HPBar");
+        UI_player2_HPBar.GetComponent<Image>().fillAmount = 1;
+
     }
 	
 	// Update is called once per frame
@@ -43,7 +54,7 @@ public class Battle : MonoBehaviour {
         timeInt = Mathf.RoundToInt(time);
         var timeSpan = TimeSpan.FromSeconds(timeInt);
         timeText.text = (string.Format("{0:D2}:{1:D2}", (int)timeSpan.TotalMinutes, timeSpan.Seconds));
-        if (time >= 0)
+        if (time >= 0 && defeat == false)
             time -= Time.deltaTime;
         else
         {
@@ -184,17 +195,28 @@ public class Battle : MonoBehaviour {
         {
             gameOverText.text = "Player 1 WINS !";
             player2_hp.text = "0";
+            GameObject UI_player2_HPBar = GameObject.Find("P2_HPBar");
+            UI_player2_HPBar.GetComponent<Image>().fillAmount = 0.2f;
+            defeat = true;
         }
         else if (player1_life < 0)
         {
             gameOverText.text = "Player 2 WINS !";
             player1_hp.text = "0";
+            GameObject UI_player1_HPBar = GameObject.Find("P1_HPBar");
+            UI_player1_HPBar.GetComponent<Image>().fillAmount = 0.2f;
+            defeat = true;
         }
         else
         {
             player1_hp.text = player1_life.ToString();
+            GameObject UI_player1_HPBar = GameObject.Find("P1_HPBar");
+            UI_player1_HPBar.GetComponent<Image>().fillAmount = ((0.8f / 100) * player1_life) + 0.2f;
             player2_hp.text = player2_life.ToString();
+            GameObject UI_player2_HPBar = GameObject.Find("P2_HPBar");
+            UI_player2_HPBar.GetComponent<Image>().fillAmount = ((0.8f / 100) * player2_life) + 0.2f;
         }
+        
 
     }
 }
