@@ -5,15 +5,7 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour {
 
-    public void ButtonVsIa ()
-    {
-        GameObject gameManagerGameObject = GameObject.Find("GameManager");
-        GameManager gameManager = gameManagerGameObject.GetComponent<GameManager>();
-        gameManager.SetGameMode(0);
-        SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
-    }
-
-    public void ButtonLocal ()
+    public void ButtonPlay ()
     {
         GameObject gameManagerGameObject = GameObject.Find("GameManager");
         GameManager gameManager = gameManagerGameObject.GetComponent<GameManager>();
@@ -21,11 +13,8 @@ public class MenuManager : MonoBehaviour {
         SceneManager.LoadScene("CharactersSelectionScene", LoadSceneMode.Single);
     }
     
-    public void ButtonOnline ()
+    public void ButtonQuit ()
     {
-        GameObject gameManagerGameObject = GameObject.Find("GameManager");
-        GameManager gameManager = gameManagerGameObject.GetComponent<GameManager>();
-        gameManager.SetGameMode(2);
-        SceneManager.LoadScene("CharactersSelectionScene", LoadSceneMode.Single);
+        Application.Quit();
     }
 }
