@@ -34,4 +34,24 @@ public class GameManager : MonoBehaviour {
     {
         this.gamemode = gameMode;
     }
+
+    public int GetPlayerOneCharacter()
+    {
+        return this.player_one;
+    }
+
+    public void SetPlayerOneCharacter(int character)
+    {
+        this.player_one = character;
+    }
+
+    public int GetPlayerTwoCharacter()
+    {
+        return this.player_two;
+    }
+
+    public void SetPlayerTwoCharacter(int character)
+    {
+        this.player_two = character;
+    }
 }
