@@ -24,6 +24,8 @@ public class Battle : MonoBehaviour {
     bool defeat;
     bool battle;
     public Sprite[] bg;
+    public Sprite[] chars;
+    public Image[] players;
     int index;
 
     public Text timeText;
@@ -70,6 +72,10 @@ public class Battle : MonoBehaviour {
         GameObject UI_player2_energy = GameObject.Find("P2_energy");
         UI_player2_energy.GetComponent<Image>().fillAmount = 0.3f;
 
+        GameObject gameManagerGameObject = GameObject.Find("GameManager");
+        GameManager gameManager = gameManagerGameObject.GetComponent<GameManager>();
+        players[0].sprite = chars[gameManager.GetPlayerOneCharacter()];
+        players[1].sprite = chars[gameManager.GetPlayerTwoCharacter()];
     }
 	
 	// Update is called once per frame
